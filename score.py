@@ -6,12 +6,12 @@ init()
 model_name = "mistralai/Mistral-7B-v0.1"
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_name, torch_dtype=torch.bfloat16, device_map='cuda', 
-    cache_dir='./workspace', token='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'
+    cache_dir='./workspace', token=''
 )
 
 tokenizer = transformers.AutoTokenizer.from_pretrained(
     model_name, model_max_tokens=2048, use_fast=False, 
-    padding_side="right", token='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'
+    padding_side="right", token=''
 )
 tokenizer.pad_token = tokenizer.unk_token 
 
