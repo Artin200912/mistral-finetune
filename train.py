@@ -7,12 +7,12 @@ init()
 model_name = "mistralai/Mistral-7B-v0.1"
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_name, torch_dtype=torch.bfloat16, device_map='cuda', 
-    cache_dir='./workspace', token='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'
+    cache_dir='./workspace', token=''
 )
 
 tokenizer = transformers.AutoTokenizer.from_pretrained(
     model_name, model_max_tokens=2048, use_fast=False, 
-    padding_side="right", token='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'
+    padding_side="right", token=''
 )
 tokenizer.pad_token = tokenizer.unk_token 
 
@@ -56,7 +56,7 @@ training_arguments = transformers.TrainingArguments(
     per_device_train_batch_size=2, 
     learning_rate=2e-3, 
     logging_steps=20,
-    push_to_hub_token = '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'
+    push_to_hub_token = ''
 )
 
 # # Trainer for the reft model 
